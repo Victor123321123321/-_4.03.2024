@@ -35,5 +35,5 @@ for i in range(len(spisok)):
 
 with open("student_new.csv", mode="w", encoding='utf-8') as w_file:
     file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
-    for i in spisok:1
+    for i in spisok:
         file_writer.writerow([i.id, i.Name, i.title, i.clas, i.score])
