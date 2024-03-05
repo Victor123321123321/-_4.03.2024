@@ -30,11 +30,12 @@ for i in f:
 for i in range(len(spisok)):
     if spisok[i].score == -1:
         spisok[i].score = round(dict[spisok[i].clas][1] / dict[spisok[i].clas][0], 3)
+        spisok[i].score = '{:.3f}'.format(spisok[i].score)
     if " ".join(spisok[i].Name)[:len("Хадаров Владимир")] == "Хадаров Владимир":
         print("Ты получил: " + str(spisok[i].score) + ", за проект - " + str(spisok[i].title))
 
 with open("student_new.csv", mode="w", encoding='utf-8') as w_file:
     file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
     for i in spisok:
-        file_writer.writerow([i.id, i.Name, i.title, i.clas, i.score])
+        file_writer.writerow([i.id, ' '.join(i.Name), i.title, i.clas, i.score])
 #
