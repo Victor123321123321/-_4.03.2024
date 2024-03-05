@@ -36,6 +36,6 @@ for i in range(len(spisok)):
 
 with open("student_new.csv", mode="w", encoding='utf-8') as w_file:
     file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
+    file_writer.writerow(['id', "Name", "titleProject_id", "class", "score", "login", "password"])
     for i in spisok:
         file_writer.writerow([i.id, ' '.join(i.Name), i.title, i.clas, i.score])
-#
